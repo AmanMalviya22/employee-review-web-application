@@ -8,19 +8,7 @@ A simple app where employees can review other employees and admins can update em
 - Admin view to update employee and assign reviews to other employees
 - Admins can create new employess and make another employee an admin
 
-## Screenshots
 
-- Sign Up
-  ![Sign Up](/images/signup.png)
-
-- Sign In
-  ![Sign In](/images/signin.png)
-
-- Admin View
-  ![Admin View](/images/admin_view.png)
-
-- Employee List
-  ![Employee List](/images/employee_list.png)
 
 ## Tech Stack
 
