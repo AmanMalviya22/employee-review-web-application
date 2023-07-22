@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('_bootstrap_meta')%>
+  <title>Assign Review</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .section {
+      margin-top: 50px;
+      padding: 20px;
+      border: 1px solid #ced4da;
+      background-color: #fff;
+    }
+
+    .section h2 {
+      margin: 0;
+      text-align: center;
+    }
+
+    .form-wrapper {
+      margin: 30px auto;
+      width: 85%;
+    }
+
+    .form-select {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    .form-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .btn-primary {
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Partial -->
+  <%- include('_header')%>
+
+  <div class="container">
+    <div class="section">
+      <div class="form-wrapper">
+        <h2>Assign Review to Employee</h2>
+        <form action="/admin/assign-review" method="post">
+          <div class="mb-4">
+            <h4>Employee</h4>
+            <select class="form-select" name="employee">
+              <% for(user of users){ %>
+              <option value="<%= user.id %>"><%= user.name %></option>
+              <% } %>
+            </select>
+          </div>
+
+          <div>
+            <h4>Reviewer</h4>
+            <select class="form-select" name="reviewer">
+              <% for(user of users){ %>
+              <option value="<%= user.id %>"><%= user.name %></option>
+              <% } %>
+            </select>
+          </div>
+
+          <div class="form-button">
+            <button type="submit" class="btn btn-primary">Assign</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="form-wrapper">
+        <h2>Make Admin</h2>
+        <form action="/admin/make-admin" method="post">
+          <select class="form-select" aria-label="Default select example" name="adminName">
+            <% for(user of users){ %>
+            <option value="<%= user.id %>"><%= user.name %></option>
+            <% } %>
+          </select>
+
+          <div class="form-button">
+            <button type="submit" class="btn btn-primary">Make Admin</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <%- include('_bootstrap_script')%>
+</body>
+
+</html>
