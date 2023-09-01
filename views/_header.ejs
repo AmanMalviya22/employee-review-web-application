@@ -1,16 +1,16 @@
-<header class="navbar navbar-dark bg-primary">
+<header class="navbar navbar-dark bg-secondary">
   <nav class="container-fluid">
     <a href="/" class="navbar-brand">Employee Review Application</a>
     <% if (locals.user) { %>
-      <a href="/" class="navbar-brand">Greeting  <%= locals.user.name %></a>
+      <a href="/" class="navbar-brand">Greetings, <%= locals.user.name %></a>
     <% } %>
     <div class="d-flex">
       <% if (locals.user && locals.user.isAdmin) { %>
         <a class="navbar-brand" href="/admin/assign-review">Assign Reviews</a>
         <a class="navbar-brand" href="/admin/admin-view">View Employees</a>
-        <a class="navbar-brand" href="/admin/signout">Admin Log Out</a>
+        <a class="navbar-brand" href="/admin/signout"><img src="https://cdn-icons-png.flaticon.com/128/6568/6568636.png" style="height: 40px; width: 40px; margin-left: 20px;" alt="Sign Out"></a>
       <% } else if (locals.user) { %>
-        <a class="navbar-brand" href="/employee/signout">User Log Out</a>
+        <a class="navbar-brand" href="/employee/signout">Log Out</a>
       <% } %>
     </div>
   </nav>

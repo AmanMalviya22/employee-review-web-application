@@ -6,8 +6,10 @@
   <title>Home</title>
   <style>
     body {
-      font-family:serif ;
+      font-family: Arial, sans-serif;
       background-color: #a2a4a6;
+      margin: 0;
+      padding: 0;
     }
 
     #main-container {
@@ -18,21 +20,37 @@
 
     .card {
       margin-bottom: 20px;
-      height: auto;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
     }
 
     .card-title {
       font-size: 18px;
       font-weight: bold;
-      margin-bottom: auto;
+      margin: 0;
+      padding: 10px;
+      background-color: #343a40;
+      color: #fff;
     }
 
     .card-text {
-      margin-bottom: auto;
+      padding: 20px;
     }
 
     .btn-primary {
-      font-size: 14px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -42,18 +60,16 @@
   <%- include('_header')%>
 
   <div id="main-container">
-    <div class="border border-dark" style="width: 45%">
-      <div class="bg-dark text-white border-light" style="padding: 5px">
-        <div class="mx-auto" style="width: 200px">
-          <h4 style="font-family:serif;">Pending Reviews</h4>
-        </div>
+    <div class="card" style="width: 45%">
+      <div class="card-title">
+        <h4>Pending Reviews</h4>
       </div>
-      <div>
+      <div class="card-text">
         <% for(let emp of toReview) { %>
         <div class="card">
           <div class="card-body">
-            <p style="font-family: Arial, Helvetica, sans-serif;">Write a review for :: <p style="background-color: #a2a4a6;"><%=emp.name%></p></p>
-            <form action="/review/create-review/<%=emp._id %>" method="post">
+            <p>Write a review for: <span style="background-color: #a2a4a6; padding: 5px;"><%= emp.name %></span></p>
+            <form action="/review/create-review/<%= emp._id %>" method="post">
               <div class="form-group">
                 <textarea class="form-control" rows="3" name="review" placeholder="Give your review"></textarea>
               </div>
@@ -67,18 +83,16 @@
       </div>
     </div>
 
-    <div class="border border-dark" style="width: 45%">
-      <div class="bg-dark text-white border-dark" style="padding: 5px">
-        <div class="mx-auto" style="width: 200px">
-          <h4 style="font-family: serif;">My Reviews</h4>
-        </div>
+    <div class="card" style="width: 45%">
+      <div class="card-title">
+        <h4>My Reviews</h4>
       </div>
-      <div>
+      <div class="card-text">
         <% for(let i=0; i<myReviews.length; i++) { %>
         <div class="card">
           <div class="card-body">
-            <p  style="background-color: #a2a4a6; font-family:'Times New Roman', Times, serif">From: <%=myReviews[i].name%></p>
-            <p  style="background-color: #a093cf ;font-family: 'Times New Roman', Times, serif;">Review: <%=myReviews[i].review%></p>
+            <p>From: <%= myReviews[i].name %></p>
+            <p>Review: <%= myReviews[i].review %></p>
           </div>
         </div>
         <% } %>

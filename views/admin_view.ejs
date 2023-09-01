@@ -8,6 +8,8 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
     }
 
     .container {
@@ -24,10 +26,12 @@
 
     h1 {
       margin: 0;
+      font-size: 24px;
+      color: #333;
     }
 
     .add-employee-btn {
-      font-size: 14px;
+      font-size: 16px;
       padding: 10px 15px;
       border: none;
       border-radius: 4px;
@@ -48,8 +52,9 @@
 
     th,
     td {
-      padding: 8px;
+      padding: 12px;
       border: 1px solid #ced4da;
+      font-size: 16px;
     }
 
     th {
@@ -65,8 +70,8 @@
 
     .btn-primary,
     .btn-danger {
-      font-size: 14px;
-      padding: 6px 12px;
+      font-size: 16px;
+      padding: 8px 12px;
       border: none;
       border-radius: 4px;
       color: #fff;
@@ -88,6 +93,8 @@
 
     .no-data {
       text-align: center;
+      font-size: 18px;
+      color: #555;
     }
   </style>
 </head>
@@ -101,7 +108,7 @@
         <h1>Employees List</h1>
       </div>
       <div class="col-6 d-flex justify-content-end">
-        <a href="/admin/add-employee" class="add-employee-btn">Add a new Employee</a>
+        <a href="/admin/add-employee" class="add-employee-btn">Add a New Employee</a>
       </div>
     </div>
 
@@ -114,7 +121,7 @@
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Admin</th>
-            <th scope="col">Make Changes</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -135,7 +142,7 @@
     </div>
     <% } else { %>
     <div class="no-data">
-      <h2>Nothing to show</h2>
+      <h2>No Records Found</h2>
     </div>
     <% } %>
   </div>
