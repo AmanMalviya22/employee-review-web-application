@@ -34,4 +34,4 @@ Environment Variables in `.env`:
 
 With these configurations in place, you're ready to empower your organization with an efficient employee review system.
 
-Thank you for choosing our Employee Review System. We look forward to helping you streamline your HR processes and foster a culture of growth and feedback in your organization.
+Thank you for choosing our Employee Review System. We look forward to helping you streamline your HR processes and foster a culture of growth and feedback in your organization
